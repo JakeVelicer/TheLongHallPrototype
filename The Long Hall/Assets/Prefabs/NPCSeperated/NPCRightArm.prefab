@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 4478392908959120498}
   - component: {fileID: 3775901138187331745}
   - component: {fileID: 5567593581532365905}
-  - component: {fileID: 8191191872078050879}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,19 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8191191872078050879
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3467699309624867012}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.28123307, y: 2.342813, z: 0.23315805}
-  m_Center: {x: -0.0026004992, y: 1.5076585, z: -1.0052433}
 --- !u!1 &6923145925644148057
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6217409849351778122}
   - component: {fileID: -345797626370367798}
+  - component: {fileID: 1029380382513950895}
   m_Layer: 0
   m_Name: NPCRightArm
   m_TagString: BodyPart
@@ -140,3 +127,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1029380382513950895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923145925644148057}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.43, y: 2.6, z: 0.55}
+  m_Center: {x: 0, y: 1.47, z: -1.02}

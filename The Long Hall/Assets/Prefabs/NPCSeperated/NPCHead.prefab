@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 1995403358060301412}
   - component: {fileID: 1293052353851332791}
   - component: {fileID: 7553515735353914439}
-  - component: {fileID: 127080462470322372}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,19 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &127080462470322372
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551723657483651282}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.851619, y: 0.8516178, z: 0.85161805}
-  m_Center: {x: -0.039930493, y: 3.133816, z: -0.248352}
 --- !u!1 &5009303363101846863
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8349611065541926748}
   - component: {fileID: -6567807634255107364}
+  - component: {fileID: 5269286853098582643}
   m_Layer: 0
   m_Name: NPCHead
   m_TagString: BodyPart
@@ -140,3 +127,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &5269286853098582643
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009303363101846863}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 3.12, z: -0.3}

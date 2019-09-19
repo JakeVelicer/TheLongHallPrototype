@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1033098790922349359}
   - component: {fileID: -874501491210980833}
+  - component: {fileID: 6190476144841010660}
   m_Layer: 0
   m_Name: NPCLeftLeg
   m_TagString: BodyPart
@@ -48,6 +49,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6190476144841010660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4038906674211789116}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49, y: 2.37, z: 0.28}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7494375258181467297
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,10 +73,9 @@ GameObject:
   - component: {fileID: 7365797920593786903}
   - component: {fileID: 7816088022055218372}
   - component: {fileID: 1538806570816897076}
-  - component: {fileID: 2574339103784229051}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,16 +140,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2574339103784229051
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7494375258181467297}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.28123307, y: 2.342813, z: 0.23315707}
-  m_Center: {x: -0.0026004992, y: -0.010581493, z: -0.027147507}
