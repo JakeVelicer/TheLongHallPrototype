@@ -34,17 +34,17 @@ public class CameraController : MonoBehaviour
 
         xAxisClamp += mouseY;
 
-        if (xAxisClamp > 90)
+        if (xAxisClamp > 60)
         {
-            xAxisClamp = 90;
+            xAxisClamp = 60;
             mouseY = 0;
             ClampXAxisRotation(270);
         }
-        else if (xAxisClamp < -90)
+        else if (xAxisClamp < -60)
         {
-            xAxisClamp = -90;
+            xAxisClamp = -60;
             mouseY = 0;
-             ClampXAxisRotation(90);
+             ClampXAxisRotation(60);
         }
 
         transform.Rotate(Vector3.left * mouseY);
