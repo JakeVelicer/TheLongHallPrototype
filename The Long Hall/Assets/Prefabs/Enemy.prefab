@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8554655104631171556, guid: 6b36b496052b59c4793fb1cae1b95d48, type: 3}
+  - {fileID: 2100000, guid: eb99c28d115f441f38d9773aa33c080f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5016861517894686285}
   m_Layer: 0
-  m_Name: EnemyFinalLongHall
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
