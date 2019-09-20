@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DoorBehavior : MonoBehaviour
 {
     public Animator animator;
+    public GameObject buttonPrompt;
     public bool canBeOpened = true;
     private bool doorOpen;
     private bool touchingPlayer;
@@ -12,7 +14,7 @@ public class DoorBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        buttonPrompt.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,6 +22,7 @@ public class DoorBehavior : MonoBehaviour
     {
         if (touchingPlayer && canBeOpened)
         {
+            buttonPrompt.SetActive(true);
             if (Input.GetButtonDown("Interact"))
             {
                 if (doorOpen)
@@ -49,6 +52,7 @@ public class DoorBehavior : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             touchingPlayer = false;
+            buttonPrompt.SetActive(false);
         }        
     }
 }
