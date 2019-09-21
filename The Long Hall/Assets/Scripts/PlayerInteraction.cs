@@ -13,6 +13,10 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (!canHold)
+                throw_drop();
+            else
+                Pickup();
         }//mause If
 
         if (!canHold && bodyPart)
@@ -29,10 +33,7 @@ public class PlayerInteraction : MonoBehaviour
             if (!bodyPart) // if we don't have anything holding
                 bodyPart = col.gameObject;
 
-            if (!canHold)
-                throw_drop();
-            else
-                Pickup();
+
         }
     }
 
