@@ -31,9 +31,9 @@ public class PlayerInteraction : MonoBehaviour
     //We can use trigger or Collision
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "BodyPart")
+        if (col.gameObject.tag == "PzPiece")
         {
-            Debug.Log("BodyPart");
+            Debug.Log("PzPiece");
             if (!bodyPart) // if we don't have anything holding
                 bodyPart = col.gameObject;
 
@@ -44,7 +44,7 @@ public class PlayerInteraction : MonoBehaviour
     //We can use trigger or Collision
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "BodyPart")
+        if (col.gameObject.tag == "PzPiece")
         {
             if (canHold)
                 bodyPart = null;
