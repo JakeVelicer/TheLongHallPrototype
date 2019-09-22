@@ -8,11 +8,19 @@ public class PlayerInteraction : MonoBehaviour
     public bool canHold = true;
     public GameObject bodyPart;
     public Transform guide;
+    //GameObject glue = new GameObject("glue");
 
     void Update()
+
     {
+
+
         if (Input.GetMouseButtonDown(0))
         {
+            if (!canHold)
+                throw_drop();
+            else
+                Pickup();
         }//mause If
 
         if (!canHold && bodyPart)
@@ -29,10 +37,7 @@ public class PlayerInteraction : MonoBehaviour
             if (!bodyPart) // if we don't have anything holding
                 bodyPart = col.gameObject;
 
-            if (!canHold)
-                throw_drop();
-            else
-                Pickup();
+           
         }
     }
 
@@ -54,7 +59,8 @@ public class PlayerInteraction : MonoBehaviour
 
         //We set the object parent to our guide empty object.
         bodyPart.transform.SetParent(guide);
-
+        
+        
         //Set gravity to false while holding it
         bodyPart.GetComponent<Rigidbody>().useGravity = false;
         bodyPart.GetComponent<Rigidbody>().isKinematic = true;
