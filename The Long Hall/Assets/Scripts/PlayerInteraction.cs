@@ -60,8 +60,8 @@ public class PlayerInteraction : MonoBehaviour
             return;
 
         //We set the object parent to our guide empty object.
+        puzzlePiece.transform.parent = null;
         puzzlePiece.transform.SetParent(guide);
-        
         
         //Set gravity to false while holding it
         puzzlePiece.GetComponent<Rigidbody>().useGravity = false;
