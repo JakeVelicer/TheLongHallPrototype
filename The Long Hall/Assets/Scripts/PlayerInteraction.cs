@@ -6,7 +6,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     public float speed = 10;
     public bool canHold = true;
-    public GameObject bodyPart;
+    public GameObject puzzlePiece;
     public Transform guide;
     //GameObject glue = new GameObject("glue");
 
@@ -21,9 +21,9 @@ public class PlayerInteraction : MonoBehaviour
                 Pickup();
         }//mause If
 
-        if (!canHold && bodyPart)
+        if (!canHold && puzzlePiece)
         {
-            bodyPart.transform.position = guide.position;
+            puzzlePiece.transform.position = guide.position;
             Rotate();
         }
            
@@ -33,11 +33,11 @@ public class PlayerInteraction : MonoBehaviour
     //We can use trigger or Collision
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "BodyPart")
+        if (col.gameObject.tag == "PzPiece")
         {
-            Debug.Log("BodyPart");
-            if (!bodyPart) // if we don't have anything holding
-                bodyPart = col.gameObject;
+            Debug.Log("PzPiece");
+            if (!puzzlePiece) // if we don't have anything holding
+                puzzlePiece = col.gameObject;
 
            
         }
@@ -46,45 +46,45 @@ public class PlayerInteraction : MonoBehaviour
     //We can use trigger or Collision
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "BodyPart")
+        if (col.gameObject.tag == "PzPiece")
         {
             if (canHold)
-                bodyPart = null;
+                puzzlePiece = null;
         }
     }
 
 
     private void Pickup()
     {
-        if (!bodyPart)
+        if (!puzzlePiece)
             return;
 
         //We set the object parent to our guide empty object.
-        bodyPart.transform.SetParent(guide);
+        puzzlePiece.transform.SetParent(guide);
         
         
         //Set gravity to false while holding it
-        bodyPart.GetComponent<Rigidbody>().useGravity = false;
-        bodyPart.GetComponent<Rigidbody>().isKinematic = true;
+        puzzlePiece.GetComponent<Rigidbody>().useGravity = false;
+        puzzlePiece.GetComponent<Rigidbody>().isKinematic = true;
 
         //we apply the same rotation our main object (Camera) has.
-        bodyPart.transform.localRotation = transform.rotation;
+        puzzlePiece.transform.localRotation = transform.rotation;
         //We re-position the ball on our guide object 
-        bodyPart.transform.position = guide.position;
+        puzzlePiece.transform.position = guide.position;
 
         canHold = false;
     }
 
     private void throw_drop()
     {
-        if (!bodyPart)
+        if (!puzzlePiece)
             return;
 
         //Set our Gravity to true again.
-        bodyPart.GetComponent<Rigidbody>().useGravity = true;
-        bodyPart.GetComponent<Rigidbody>().isKinematic = false;
+        puzzlePiece.GetComponent<Rigidbody>().useGravity = true;
+        puzzlePiece.GetComponent<Rigidbody>().isKinematic = false;
         // we don't have anything to do with our ball field anymore
-        bodyPart = null; 
+        puzzlePiece = null; 
         //Apply velocity on throwing
         guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = transform.forward * speed;
 
@@ -98,13 +98,13 @@ public class PlayerInteraction : MonoBehaviour
         // rotate object to the left
         if(Input.GetKey(KeyCode.Z))
         {
-            bodyPart.transform.Rotate(10f, 0, 0);
+            puzzlePiece.transform.Rotate(10f, 0, 0);
         }
 
         //rotate object to the right
         if(Input.GetKey(KeyCode.X))
         {
-            bodyPart.transform.Rotate(-10f, 0, 0);
+            puzzlePiece.transform.Rotate(-10f, 0, 0);
         }
     }
 }
