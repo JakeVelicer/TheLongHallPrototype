@@ -9,7 +9,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
     public float pieceRotationZ;
     [HideInInspector] public bool slotOccupiedCorrectly;
     private bool touchingPiece;
-    private bool slotOccupied;
+    [HideInInspector] public bool slotOccupied;
     private GameObject puzzlePieceObject;
     private PlayerInteraction playerHandScript;
 
@@ -22,7 +22,6 @@ public class PuzzleSlotBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(touchingPiece);
         if (touchingPiece)
         {
             if (Input.GetButtonDown("Interact") && !slotOccupied)
@@ -31,8 +30,12 @@ public class PuzzleSlotBehavior : MonoBehaviour
                 puzzlePieceObject.transform.parent = null;
                 playerHandScript.puzzlePiece = null;
                 playerHandScript.canHold = true;
+
                 puzzlePieceObject.transform.SetParent(this.transform, true);
-                Debug.Log("Attached");
+                puzzlePieceObject.transform.position = transform.position;
+                puzzlePieceObject.transform.rotation =
+                Quaternion.Euler(transform.rotation.x, transform.rotation.y,
+                puzzlePieceObject.transform.rotation.z);
 
                 if (puzzlePieceObject.name == pieceName
                 && puzzlePieceObject.transform.rotation.z == pieceRotationZ)
@@ -44,9 +47,9 @@ public class PuzzleSlotBehavior : MonoBehaviour
             }
             else if (Input.GetButtonDown("Interact") && slotOccupied)
             {
-                puzzlePieceObject.transform.SetParent(GameObject.Find("Holder").transform);
-                slotOccupiedCorrectly = true;
-                slotOccupied = false;
+                //puzzlePieceObject.transform.SetParent(GameObject.Find("Holder").transform);
+                //slotOccupiedCorrectly = false;
+                //slotOccupied = false;
             }
         }
     }

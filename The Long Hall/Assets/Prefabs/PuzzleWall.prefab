@@ -252,6 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6368814593111011335}
   - component: {fileID: 6368814593111011328}
+  - component: {fileID: 927289061}
   m_Layer: 0
   m_Name: PuzzleSlot4
   m_TagString: Untagged
@@ -286,6 +287,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &927289061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368814593111011334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e658a0d8451a744cb98f388b73027614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleBoard: {fileID: 6368814593222678716}
+  pieceName: PuzzlePiece4
+  pieceRotationZ: 90
+  slotOccupiedCorrectly: 0
+  slotOccupied: 0
 --- !u!1 &6368814593150368775
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6368814593150368768}
   - component: {fileID: 6368814593150368769}
+  - component: {fileID: 122241053}
   m_Layer: 0
   m_Name: PuzzleSlot6
   m_TagString: Untagged
@@ -330,6 +349,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &122241053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368814593150368775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e658a0d8451a744cb98f388b73027614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleBoard: {fileID: 6368814593222678716}
+  pieceName: PuzzlePiece6
+  pieceRotationZ: 90
+  slotOccupiedCorrectly: 0
+  slotOccupied: 0
 --- !u!1 &6368814593209291028
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +510,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65936277d44514615a06eac283db2591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotFilledCorrectly: 
+  puzzleSlots:
+  - {fileID: 6368814593936292181}
+  - {fileID: 6368814593881881192}
+  - {fileID: 6368814594216352102}
+  - {fileID: 6368814593111011334}
+  - {fileID: 6368814593856466507}
+  - {fileID: 6368814593150368775}
+  - {fileID: 6368814594692716120}
+  - {fileID: 6368814594769829302}
+  - {fileID: 6368814593414469955}
+  door: {fileID: 7259948938195159524}
+  slotFilledCorrectly: 000000000000000000
 --- !u!1 &6368814593414469955
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6368814593414470012}
   - component: {fileID: 6368814593414470013}
+  - component: {fileID: 509237275}
   m_Layer: 0
   m_Name: PuzzleSlot9
   m_TagString: Untagged
@@ -519,6 +567,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &509237275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368814593414469955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e658a0d8451a744cb98f388b73027614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleBoard: {fileID: 6368814593222678716}
+  pieceName: PuzzlePiece9
+  pieceRotationZ: 90
+  slotOccupiedCorrectly: 0
+  slotOccupied: 0
 --- !u!1 &6368814593856466507
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6368814593856466500}
   - component: {fileID: 6368814593856466501}
+  - component: {fileID: 2067450529}
   m_Layer: 0
   m_Name: PuzzleSlot5
   m_TagString: Untagged
@@ -563,6 +629,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2067450529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368814593856466507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e658a0d8451a744cb98f388b73027614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleBoard: {fileID: 6368814593222678716}
+  pieceName: PuzzlePiece5
+  pieceRotationZ: 90
+  slotOccupiedCorrectly: 0
+  slotOccupied: 0
 --- !u!1 &6368814593881881192
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +656,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6368814593881881193}
   - component: {fileID: 6368814593881881194}
+  - component: {fileID: 176205864}
   m_Layer: 0
   m_Name: PuzzleSlot2
   m_TagString: Untagged
@@ -607,6 +691,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &176205864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368814593881881192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e658a0d8451a744cb98f388b73027614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleBoard: {fileID: 6368814593222678716}
+  pieceName: PuzzlePiece2
+  pieceRotationZ: 90
+  slotOccupiedCorrectly: 0
+  slotOccupied: 0
 --- !u!1 &6368814593936292181
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +768,8 @@ MonoBehaviour:
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece1
   pieceRotationZ: 90
+  slotOccupiedCorrectly: 0
+  slotOccupied: 0
 --- !u!1 &6368814594216352102
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6368814594216352103}
   - component: {fileID: 6368814594216352096}
+  - component: {fileID: 1616464876}
   m_Layer: 0
   m_Name: PuzzleSlot3
   m_TagString: Untagged
@@ -711,6 +815,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1616464876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368814594216352102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e658a0d8451a744cb98f388b73027614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleBoard: {fileID: 6368814593222678716}
+  pieceName: PuzzlePiece3
+  pieceRotationZ: 90
+  slotOccupiedCorrectly: 0
+  slotOccupied: 0
 --- !u!1 &6368814594235313898
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6368814594692716121}
   - component: {fileID: 6368814594692716122}
+  - component: {fileID: 21602515}
   m_Layer: 0
   m_Name: PuzzleSlot7
   m_TagString: Untagged
@@ -882,6 +1004,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &21602515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368814594692716120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e658a0d8451a744cb98f388b73027614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleBoard: {fileID: 6368814593222678716}
+  pieceName: PuzzlePiece7
+  pieceRotationZ: 90
+  slotOccupiedCorrectly: 0
+  slotOccupied: 0
 --- !u!1 &6368814594756950954
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +1123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6368814594769829303}
   - component: {fileID: 6368814594769829296}
+  - component: {fileID: 1464481981}
   m_Layer: 0
   m_Name: PuzzleSlot8
   m_TagString: Untagged
@@ -1018,6 +1158,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1464481981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368814594769829302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e658a0d8451a744cb98f388b73027614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleBoard: {fileID: 6368814593222678716}
+  pieceName: PuzzlePiece8
+  pieceRotationZ: 90
+  slotOccupiedCorrectly: 0
+  slotOccupied: 0
 --- !u!1 &7259948938195159513
 GameObject:
   m_ObjectHideFlags: 0

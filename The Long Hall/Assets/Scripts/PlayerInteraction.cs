@@ -36,7 +36,6 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (col.gameObject.tag == "PzPiece")
         {
-            Debug.Log("PzPiece");
             if (!puzzlePiece) // if we don't have anything holding
                 puzzlePiece = col.gameObject;
 
@@ -61,7 +60,12 @@ public class PlayerInteraction : MonoBehaviour
             return;
 
         //We set the object parent to our guide empty object.
-        puzzlePiece.transform.parent = null;
+        if (puzzlePiece.transform.parent != null)
+        {
+            puzzlePiece.transform.parent.GetComponent<PuzzleSlotBehavior>().slotOccupiedCorrectly = false;
+            puzzlePiece.transform.parent.GetComponent<PuzzleSlotBehavior>().slotOccupied = false;
+            puzzlePiece.transform.parent = null;
+        }
         puzzlePiece.transform.SetParent(guide);
         //Set gravity to false while holding it
         puzzlePiece.GetComponent<Rigidbody>().useGravity = false;
