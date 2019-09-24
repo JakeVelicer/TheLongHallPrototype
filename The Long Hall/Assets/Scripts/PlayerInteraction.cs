@@ -9,7 +9,8 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject puzzlePiece;
     public Transform guide;
     //GameObject glue = new GameObject("glue");
-
+      
+    
     void Update()
 
     {
@@ -26,8 +27,8 @@ public class PlayerInteraction : MonoBehaviour
             puzzlePiece.transform.position = guide.position;
             Rotate();
         }
-           
-        
+
+
     }//update
 
     //We can use trigger or Collision
@@ -60,17 +61,14 @@ public class PlayerInteraction : MonoBehaviour
             return;
 
         //We set the object parent to our guide empty object.
+        puzzlePiece.transform.parent = null;
         puzzlePiece.transform.SetParent(guide);
-        
-        
         //Set gravity to false while holding it
         puzzlePiece.GetComponent<Rigidbody>().useGravity = false;
         puzzlePiece.GetComponent<Rigidbody>().isKinematic = true;
-
-        //we apply the same rotation our main object (Camera) has.
-        puzzlePiece.transform.localRotation = transform.rotation;
-        //We re-position the ball on our guide object 
-        puzzlePiece.transform.position = guide.position;
+        //sets the puzzle piece position to a fixed rotation and position
+        puzzlePiece.transform.position = guide.transform.position;
+        puzzlePiece.transform.rotation = guide.transform.rotation;
 
         canHold = false;
     }
@@ -96,15 +94,15 @@ public class PlayerInteraction : MonoBehaviour
     private void Rotate()
     {
         // rotate object to the left
-        if(Input.GetKey(KeyCode.Z))
+        if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            puzzlePiece.transform.Rotate(10f, 0, 0);
+            puzzlePiece.transform.Rotate(0, 0, 45f);
         }
 
         //rotate object to the right
-        if(Input.GetKey(KeyCode.X))
+        if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            puzzlePiece.transform.Rotate(-10f, 0, 0);
+            puzzlePiece.transform.Rotate(0, 0, 45f);
         }
     }
 }
