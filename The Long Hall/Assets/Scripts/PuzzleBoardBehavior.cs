@@ -5,6 +5,10 @@ using UnityEngine;
 public class PuzzleBoardBehavior : MonoBehaviour
 {
 
+    public GameObject[] puzzleSlots;
+    public DoorBehavior door;
+    public bool[] slotFilledCorrectly;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +21,18 @@ public class PuzzleBoardBehavior : MonoBehaviour
         
     }
 
-    public void ReceivePuzzle(int thePiece)
+    public void AssignPuzzle(GameObject puzzleSlot)
     {
-
+        for (int i = 0; i < puzzleSlots.Length; i++)
+        {
+            if (puzzleSlots[i].name == puzzleSlot.name)
+            {
+                if (puzzleSlot.GetComponent<PuzzleSlotBehavior>().slotOccupiedCorrectly)
+                {
+                    slotFilledCorrectly[i] = true;
+                    door.canBeOpened = true;
+                }
+            }
+        }
     }
 }

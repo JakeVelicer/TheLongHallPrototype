@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 6368814593150368768}
   - component: {fileID: 6368814593150368769}
   m_Layer: 0
-  m_Name: PuzzleSlot5
+  m_Name: PuzzleSlot6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,6 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65936277d44514615a06eac283db2591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotFilledCorrectly: 
 --- !u!1 &6368814593414469955
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +486,7 @@ GameObject:
   - component: {fileID: 6368814593414470012}
   - component: {fileID: 6368814593414470013}
   m_Layer: 0
-  m_Name: PuzzleSlot8
+  m_Name: PuzzleSlot9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -848,7 +849,7 @@ GameObject:
   - component: {fileID: 6368814594692716121}
   - component: {fileID: 6368814594692716122}
   m_Layer: 0
-  m_Name: PuzzleSlot6
+  m_Name: PuzzleSlot7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -984,7 +985,7 @@ GameObject:
   - component: {fileID: 6368814594769829303}
   - component: {fileID: 6368814594769829296}
   m_Layer: 0
-  m_Name: PuzzleSlot7
+  m_Name: PuzzleSlot8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

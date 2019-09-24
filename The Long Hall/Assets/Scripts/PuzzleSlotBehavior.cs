@@ -7,6 +7,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
     public PuzzleBoardBehavior puzzleBoard;
     public string pieceName;
     public float pieceRotationZ;
+    [HideInInspector] public bool slotOccupiedCorrectly;
     private bool touchingPiece;
     private bool slotOccupied;
     private GameObject puzzlePieceObject;
@@ -29,12 +30,14 @@ public class PuzzleSlotBehavior : MonoBehaviour
                 if (puzzlePieceObject.name == pieceName
                 && puzzlePieceObject.transform.rotation.z == pieceRotationZ)
                 {
-                    //Tell master puzzle script this slot is correct
+                    slotOccupiedCorrectly = true;
+                    puzzleBoard.AssignPuzzle(gameObject);
                 }
             }
             else if (Input.GetButtonDown("Interact") && slotOccupied)
             {
                 puzzlePieceObject.transform.SetParent(GameObject.Find("Holder").transform);
+                slotOccupiedCorrectly = true;
                 slotOccupied = false;
             }
         }
@@ -42,7 +45,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PuzzlePiece") && !slotOccupied)
+        if (other.gameObject.CompareTag("PzPiece") && !slotOccupied)
         {
             touchingPiece = true;
             puzzlePieceObject = other.gameObject;
@@ -51,7 +54,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("PuzzlePiece") && !slotOccupied)
+        if (other.gameObject.CompareTag("PzPiece") && !slotOccupied)
         {
             touchingPiece = false;
             puzzlePieceObject = null;
