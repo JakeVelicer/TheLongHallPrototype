@@ -26,6 +26,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             puzzlePiece.transform.position = guide.position;
             Rotate();
+
+           
         }
 
 
@@ -60,14 +62,22 @@ public class PlayerInteraction : MonoBehaviour
         if (!puzzlePiece)
             return;
 
+        
         //We set the object parent to our guide empty object.
         puzzlePiece.transform.SetParent(guide);
+
         //Set gravity to false while holding it
         puzzlePiece.GetComponent<Rigidbody>().useGravity = false;
         puzzlePiece.GetComponent<Rigidbody>().isKinematic = true;
+  
         //sets the puzzle piece position to a fixed rotation and position
         puzzlePiece.transform.position = guide.transform.position;
         puzzlePiece.transform.rotation = guide.transform.rotation;
+
+        
+
+
+
 
         canHold = false;
     }
