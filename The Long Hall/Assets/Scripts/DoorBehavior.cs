@@ -11,9 +11,14 @@ public class DoorBehavior : MonoBehaviour
     private bool doorOpen;
     private bool touchingPlayer;
 
+    AudioSource source;
+    public AudioClip openingDoor;
+    public AudioClip closingDoor;
+
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
         buttonPrompt.SetActive(false);
     }
 
@@ -28,11 +33,13 @@ public class DoorBehavior : MonoBehaviour
                 if (doorOpen)
                 {
                     animator.Play("DoorAnimationClosing");
+                    source.PlayOneShot(closingDoor);
                     doorOpen = false;
                 }
                 else
                 {
                     animator.Play("DoorAnimationOpening");
+                    source.PlayOneShot(openingDoor);
                     doorOpen = true;
                 }
             }
