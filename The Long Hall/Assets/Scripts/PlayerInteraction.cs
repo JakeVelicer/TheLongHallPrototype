@@ -13,8 +13,6 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
 
     {
-
-
         if (Input.GetMouseButtonDown(0))
         {
             if (!canHold)
@@ -24,7 +22,11 @@ public class PlayerInteraction : MonoBehaviour
         }//mause If
 
         if (!canHold && bodyPart)
+        {
             bodyPart.transform.position = guide.position;
+            Rotate();
+        }
+           
         
     }//update
 
@@ -89,5 +91,20 @@ public class PlayerInteraction : MonoBehaviour
         //Unparent our ball
         guide.GetChild(0).parent = null;
         canHold = true;
+    }
+
+    private void Rotate()
+    {
+        // rotate object to the left
+        if(Input.GetKey(KeyCode.Z))
+        {
+            bodyPart.transform.Rotate(10f, 0, 0);
+        }
+
+        //rotate object to the right
+        if(Input.GetKey(KeyCode.X))
+        {
+            bodyPart.transform.Rotate(-10f, 0, 0);
+        }
     }
 }
