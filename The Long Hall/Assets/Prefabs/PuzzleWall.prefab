@@ -220,6 +220,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6327720176282669122}
+  - {fileID: 6368814593222678659}
   m_Father: {fileID: 7259948938195159526}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -301,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece4
-  pieceRotationZ: 90
+  pieceRotationZ: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &6368814593150368775
@@ -363,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece6
-  pieceRotationZ: 90
+  pieceRotationZ: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &6368814593209291028
@@ -397,7 +398,7 @@ Transform:
   m_LocalScale: {x: 3.4377663, y: 4.095, z: 0.2}
   m_Children: []
   m_Father: {fileID: 6368814594235313899}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &6368814593209291024
 MeshFilter:
@@ -482,8 +483,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6368814593222678658}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.3554, z: -0.043885358}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.0981525, y: -0.01999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6368814593936292182}
@@ -495,8 +496,8 @@ Transform:
   - {fileID: 6368814594692716121}
   - {fileID: 6368814594769829303}
   - {fileID: 6368814593414470012}
-  m_Father: {fileID: 6368814594235313899}
-  m_RootOrder: 0
+  m_Father: {fileID: 6327720176876477885}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6368814593222678716
 MonoBehaviour:
@@ -581,7 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece9
-  pieceRotationZ: 90
+  pieceRotationZ: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &6368814593856466507
@@ -643,7 +644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece5
-  pieceRotationZ: 90
+  pieceRotationZ: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &6368814593881881192
@@ -705,7 +706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece2
-  pieceRotationZ: 90
+  pieceRotationZ: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &6368814593936292181
@@ -767,7 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece1
-  pieceRotationZ: 90
+  pieceRotationZ: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &6368814594216352102
@@ -829,7 +830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece3
-  pieceRotationZ: 90
+  pieceRotationZ: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &6368814594235313898
@@ -859,7 +860,6 @@ Transform:
   m_LocalPosition: {x: -20, y: 6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6368814593222678659}
   - {fileID: 7259948938195159526}
   - {fileID: 6368814594756950950}
   - {fileID: 6368814593209291029}
@@ -898,7 +898,7 @@ Transform:
   m_LocalScale: {x: 3.4377718, y: 4.095, z: 0.2000001}
   m_Children: []
   m_Father: {fileID: 6368814594235313899}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &6368814594518251486
 MeshFilter:
@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece7
-  pieceRotationZ: 90
+  pieceRotationZ: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &6368814594756950954
@@ -1052,7 +1052,7 @@ Transform:
   m_LocalScale: {x: 8.837096, y: 5, z: 0.20000012}
   m_Children: []
   m_Father: {fileID: 6368814594235313899}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &6368814594756950949
 MeshFilter:
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece8
-  pieceRotationZ: 90
+  pieceRotationZ: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &7259948938195159513
@@ -1207,7 +1207,7 @@ Transform:
   - {fileID: 1696138505540652663}
   - {fileID: 6327720176876477885}
   m_Father: {fileID: 6368814594235313899}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &7259948938195159527
 BoxCollider:
@@ -1237,6 +1237,8 @@ MonoBehaviour:
   animator: {fileID: 6327720176876477882}
   buttonPrompt: {fileID: 8414201824552221545}
   canBeOpened: 0
+  openingDoor: {fileID: 0}
+  closingDoor: {fileID: 0}
 --- !u!1 &8414201824552221545
 GameObject:
   m_ObjectHideFlags: 0

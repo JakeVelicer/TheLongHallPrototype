@@ -34,24 +34,27 @@ public class PuzzleSlotBehavior : MonoBehaviour
                 puzzlePieceObject.transform.SetParent(this.transform, true);
                 puzzlePieceObject.transform.position = transform.position;
                 puzzlePieceObject.transform.rotation =
-                Quaternion.Euler(transform.rotation.x, transform.rotation.y,
-                puzzlePieceObject.transform.rotation.z);
+                    Quaternion.Euler(transform.rotation.x, transform.rotation.y,
+                    puzzlePieceObject.transform.rotation.z);
 
                 if (puzzlePieceObject.name == pieceName
-                && puzzlePieceObject.transform.rotation.z == pieceRotationZ)
+                && puzzlePieceObject.transform.rotation.z <= pieceRotationZ + 1
+                && puzzlePieceObject.transform.rotation.z >= pieceRotationZ - 1)
                 {
                     slotOccupiedCorrectly = true;
                     puzzleBoard.AssignPuzzle(gameObject);
                     Debug.Log("RightPiece");
                 }
             }
-            else if (Input.GetButtonDown("Interact") && slotOccupied)
-            {
-                //puzzlePieceObject.transform.SetParent(GameObject.Find("Holder").transform);
-                //slotOccupiedCorrectly = false;
-                //slotOccupied = false;
-            }
         }
+    }
+
+    public void RemovePiece()
+    {
+        slotOccupiedCorrectly = false;
+        slotOccupied = false;
+        puzzleBoard.RemovePuzzlePiece(gameObject);
+        puzzlePieceObject.transform.parent = null;
     }
 
     private void OnTriggerEnter(Collider other)

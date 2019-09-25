@@ -40,7 +40,6 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (!puzzlePiece) // if we don't have anything holding
                 puzzlePiece = col.gameObject;
-
            
         }
     }
@@ -65,9 +64,7 @@ public class PlayerInteraction : MonoBehaviour
         //We set the object parent to our guide empty object.
         if (puzzlePiece.transform.parent != null)
         {
-            puzzlePiece.transform.parent.GetComponent<PuzzleSlotBehavior>().slotOccupiedCorrectly = false;
-            puzzlePiece.transform.parent.GetComponent<PuzzleSlotBehavior>().slotOccupied = false;
-            puzzlePiece.transform.parent = null;
+            puzzlePiece.transform.parent.GetComponent<PuzzleSlotBehavior>().RemovePiece();
         }
         puzzlePiece.transform.SetParent(guide);
 

@@ -23,6 +23,7 @@ public class PuzzleBoardBehavior : MonoBehaviour
 
     public void AssignPuzzle(GameObject puzzleSlot)
     {
+        int trueAmount = 0;
         for (int i = 0; i < puzzleSlots.Length; i++)
         {
             if (puzzleSlots[i].name == puzzleSlot.name)
@@ -30,8 +31,26 @@ public class PuzzleBoardBehavior : MonoBehaviour
                 if (puzzleSlot.GetComponent<PuzzleSlotBehavior>().slotOccupiedCorrectly)
                 {
                     slotFilledCorrectly[i] = true;
-                    door.canBeOpened = true;
                 }
+            }
+            if (slotFilledCorrectly[i] == true)
+            {
+                trueAmount++;
+            }
+        }
+        if (trueAmount == slotFilledCorrectly.Length)
+        {
+            door.canBeOpened = true;
+        }
+    }
+
+    public void RemovePuzzlePiece(GameObject puzzleSlot)
+    {
+        for (int i = 0; i < puzzleSlots.Length; i++)
+        {
+            if (puzzleSlots[i].name == puzzleSlot.name)
+            {
+                slotFilledCorrectly[i] = false;
             }
         }
     }
