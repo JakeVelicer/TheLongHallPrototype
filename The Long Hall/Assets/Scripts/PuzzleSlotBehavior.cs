@@ -8,15 +8,18 @@ public class PuzzleSlotBehavior : MonoBehaviour
     public string pieceName;
     public float pieceRotationZ;
     [HideInInspector] public bool slotOccupiedCorrectly;
-    private bool touchingPiece;
     [HideInInspector] public bool slotOccupied;
     private GameObject puzzlePieceObject;
     private PlayerInteraction playerHandScript;
+    private MeshRenderer mesh;
+    private bool touchingPiece;
 
     // Start is called before the first frame update
     void Start()
     {
         playerHandScript = GameObject.Find("Hand").GetComponent<PlayerInteraction>();
+        mesh = GetComponent<MeshRenderer>();
+        mesh.enabled = false;
     }
 
     // Update is called once per frame
@@ -36,6 +39,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
             puzzlePieceObject.transform.parent = null;
             playerHandScript.puzzlePiece = null;
             playerHandScript.canHold = true;
+            mesh.enabled = false;
 
             puzzlePieceObject.transform.SetParent(this.transform, true);
             puzzlePieceObject.transform.position = transform.position;
@@ -67,6 +71,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
         if (other.gameObject.CompareTag("PzPiece") && !slotOccupied)
         {
             touchingPiece = true;
+            mesh.enabled = true;
             puzzlePieceObject = other.gameObject;
             playerHandScript.pieceTouchingPuzzleSlot = true;
             Debug.Log(playerHandScript.pieceTouchingPuzzleSlot);
@@ -78,6 +83,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
         if (other.gameObject.CompareTag("PzPiece") && !slotOccupied)
         {
             touchingPiece = false;
+            mesh.enabled = false;
             puzzlePieceObject = null;
             playerHandScript.pieceTouchingPuzzleSlot = false;
             Debug.Log(playerHandScript.pieceTouchingPuzzleSlot);

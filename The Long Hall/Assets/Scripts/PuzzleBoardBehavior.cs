@@ -4,22 +4,9 @@ using UnityEngine;
 
 public class PuzzleBoardBehavior : MonoBehaviour
 {
-
-    public GameObject[] puzzleSlots;
     public DoorBehavior door;
+    public GameObject[] puzzleSlots;
     public bool[] slotFilledCorrectly;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void AssignPuzzle(GameObject puzzleSlot)
     {
