@@ -11,7 +11,7 @@ public class PuzzlePieces : MonoBehaviour
 
     void Start()
     {
-       // npcBehavior.enabled = false;
+        // npcBehavior.enabled = false;
         foreach (GameObject part in puzzlePc)
         {
             part.SetActive(false);

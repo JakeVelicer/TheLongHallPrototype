@@ -24,27 +24,32 @@ public class PuzzleSlotBehavior : MonoBehaviour
     {
         if (touchingPiece)
         {
-            if (Input.GetButtonDown("Interact") && !slotOccupied)
+            AttachPiece();
+        }
+    }
+
+    public void AttachPiece()
+    {
+        if (Input.GetMouseButtonDown(0) && !slotOccupied)
+        {
+            slotOccupied = true;
+            puzzlePieceObject.transform.parent = null;
+            playerHandScript.puzzlePiece = null;
+            playerHandScript.canHold = true;
+
+            puzzlePieceObject.transform.SetParent(this.transform, true);
+            puzzlePieceObject.transform.position = transform.position;
+            puzzlePieceObject.transform.rotation =
+                Quaternion.Euler(transform.rotation.x, transform.rotation.y,
+                puzzlePieceObject.transform.rotation.z);
+
+            if (puzzlePieceObject.name == pieceName
+            && puzzlePieceObject.transform.rotation.z <= pieceRotationZ + 1
+            && puzzlePieceObject.transform.rotation.z >= pieceRotationZ - 1)
             {
-                slotOccupied = true;
-                puzzlePieceObject.transform.parent = null;
-                playerHandScript.puzzlePiece = null;
-                playerHandScript.canHold = true;
-
-                puzzlePieceObject.transform.SetParent(this.transform, true);
-                puzzlePieceObject.transform.position = transform.position;
-                puzzlePieceObject.transform.rotation =
-                    Quaternion.Euler(transform.rotation.x, transform.rotation.y,
-                    puzzlePieceObject.transform.rotation.z);
-
-                if (puzzlePieceObject.name == pieceName
-                && puzzlePieceObject.transform.rotation.z <= pieceRotationZ + 1
-                && puzzlePieceObject.transform.rotation.z >= pieceRotationZ - 1)
-                {
-                    slotOccupiedCorrectly = true;
-                    puzzleBoard.AssignPuzzle(gameObject);
-                    Debug.Log("RightPiece");
-                }
+                slotOccupiedCorrectly = true;
+                puzzleBoard.AssignPuzzle(gameObject);
+                Debug.Log("RightPiece");
             }
         }
     }
@@ -63,6 +68,8 @@ public class PuzzleSlotBehavior : MonoBehaviour
         {
             touchingPiece = true;
             puzzlePieceObject = other.gameObject;
+            playerHandScript.pieceTouchingPuzzleSlot = true;
+            Debug.Log(playerHandScript.pieceTouchingPuzzleSlot);
         }
     }
 
@@ -72,6 +79,8 @@ public class PuzzleSlotBehavior : MonoBehaviour
         {
             touchingPiece = false;
             puzzlePieceObject = null;
+            playerHandScript.pieceTouchingPuzzleSlot = false;
+            Debug.Log(playerHandScript.pieceTouchingPuzzleSlot);
         }        
     }
     

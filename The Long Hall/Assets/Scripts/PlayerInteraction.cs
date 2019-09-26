@@ -8,32 +8,27 @@ public class PlayerInteraction : MonoBehaviour
     public bool canHold = true;
     public GameObject puzzlePiece;
     public Transform guide;
-    //GameObject glue = new GameObject("glue");
+    public bool pieceTouchingPuzzleSlot;
       
     
     void Update()
-
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!canHold)
+            if (!canHold && !pieceTouchingPuzzleSlot)
                 throw_drop();
             else
                 Pickup();
-        }//mause If
+        }
 
         if (!canHold && puzzlePiece)
         {
             puzzlePiece.transform.position = guide.position;
             Rotate();
-
-           
         }
 
+    }
 
-    }//update
-
-    //We can use trigger or Collision
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "PzPiece")
@@ -44,7 +39,6 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    //We can use trigger or Collision
     void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag == "PzPiece")
@@ -54,12 +48,10 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-
     private void Pickup()
     {
         if (!puzzlePiece)
             return;
-
         
         //We set the object parent to our guide empty object.
         if (puzzlePiece.transform.parent != null)
@@ -75,11 +67,6 @@ public class PlayerInteraction : MonoBehaviour
         //sets the puzzle piece position to a fixed rotation and position
         puzzlePiece.transform.position = guide.transform.position;
         puzzlePiece.transform.rotation = guide.transform.rotation;
-
-        
-
-
-
 
         canHold = false;
     }
