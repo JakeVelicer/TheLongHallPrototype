@@ -29,6 +29,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
         {
             AttachPiece();
         }
+
     }
 
     public void AttachPiece()
@@ -44,12 +45,11 @@ public class PuzzleSlotBehavior : MonoBehaviour
             puzzlePieceObject.transform.SetParent(this.transform, true);
             puzzlePieceObject.transform.position = transform.position;
             puzzlePieceObject.transform.rotation =
-                Quaternion.Euler(transform.rotation.x, transform.rotation.y,
-                puzzlePieceObject.transform.rotation.z);
+            Quaternion.Euler(0, 90, GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
 
             if (puzzlePieceObject.name == pieceName
-            && puzzlePieceObject.transform.rotation.z <= pieceRotationZ + 1
-            && puzzlePieceObject.transform.rotation.z >= pieceRotationZ - 1)
+            && puzzlePieceObject.transform.rotation.z <= pieceRotationZ + 2
+            && puzzlePieceObject.transform.rotation.z >= pieceRotationZ - 2)
             {
                 slotOccupiedCorrectly = true;
                 puzzleBoard.AssignPuzzle(gameObject);
@@ -74,7 +74,6 @@ public class PuzzleSlotBehavior : MonoBehaviour
             mesh.enabled = true;
             puzzlePieceObject = other.gameObject;
             playerHandScript.pieceTouchingPuzzleSlot = true;
-            Debug.Log(playerHandScript.pieceTouchingPuzzleSlot);
         }
     }
 
@@ -86,7 +85,6 @@ public class PuzzleSlotBehavior : MonoBehaviour
             mesh.enabled = false;
             puzzlePieceObject = null;
             playerHandScript.pieceTouchingPuzzleSlot = false;
-            Debug.Log(playerHandScript.pieceTouchingPuzzleSlot);
         }        
     }
     
