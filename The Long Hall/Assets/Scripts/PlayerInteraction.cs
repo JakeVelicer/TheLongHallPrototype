@@ -26,7 +26,6 @@ public class PlayerInteraction : MonoBehaviour
             puzzlePiece.transform.position = guide.position;
             Rotate();
         }
-
     }
 
     void OnTriggerEnter(Collider col)
@@ -94,7 +93,7 @@ public class PlayerInteraction : MonoBehaviour
         // rotate object to the left
         if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            puzzlePiece.transform.Rotate(0, 0, 45f);
+            puzzlePiece.transform.Rotate(0, 0, -45f);
         }
 
         //rotate object to the right
