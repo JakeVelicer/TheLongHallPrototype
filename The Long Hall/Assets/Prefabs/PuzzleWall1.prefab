@@ -107,7 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece1
-  pieceRotationZ: 0
+  pieceRotationZ: 270
+  optionPieceRotationZ2: 270
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &591911369243460201
@@ -218,6 +219,7 @@ MonoBehaviour:
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece6
   pieceRotationZ: 0
+  optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &1019819637650937072
@@ -328,6 +330,7 @@ MonoBehaviour:
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece8
   pieceRotationZ: 0
+  optionPieceRotationZ2: 180
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &2077356661151164217
@@ -437,7 +440,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece3
-  pieceRotationZ: 0
+  pieceRotationZ: 90
+  optionPieceRotationZ2: 90
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &3251636008839513792
@@ -547,7 +551,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece11
-  pieceRotationZ: 0
+  pieceRotationZ: 270
+  optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &3357929672690417931
@@ -658,6 +663,7 @@ MonoBehaviour:
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece12
   pieceRotationZ: 0
+  optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &5376084318927531705
@@ -1455,6 +1461,7 @@ MonoBehaviour:
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece5
   pieceRotationZ: 0
+  optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &7787779647186122789
@@ -1564,7 +1571,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece10
-  pieceRotationZ: 0
+  pieceRotationZ: 270
+  optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &7992388513547514405
@@ -1675,6 +1683,7 @@ MonoBehaviour:
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece9
   pieceRotationZ: 0
+  optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &8046812559632264582
@@ -1785,6 +1794,7 @@ MonoBehaviour:
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece4
   pieceRotationZ: 0
+  optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &8414201824552221545
@@ -1966,7 +1976,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece7
-  pieceRotationZ: 0
+  pieceRotationZ: 180
+  optionPieceRotationZ2: 180
   slotOccupiedCorrectly: 0
   slotOccupied: 0
 --- !u!1 &9181787473532207077
@@ -2076,6 +2087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece2
-  pieceRotationZ: 0
+  pieceRotationZ: 90
+  optionPieceRotationZ2: 90
   slotOccupiedCorrectly: 0
   slotOccupied: 0
