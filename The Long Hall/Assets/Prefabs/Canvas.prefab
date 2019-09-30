@@ -485,8 +485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -234.65, y: -29.95}
-  m_SizeDelta: {x: 1302.7, y: 863.3}
+  m_AnchoredPosition: {x: -234.65, y: 4}
+  m_SizeDelta: {x: 1302.7, y: 680}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7948619037682681409
 CanvasRenderer:
@@ -518,7 +518,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_FontSize: 92
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -534,7 +534,7 @@ MonoBehaviour:
     - Cursor to look around
 
 
-    - A / D to rotate puzzle peices
+    - Q / E to rotate puzzle peices
 
     - Click Left mouse to pick up/put down puzzle peices'
 --- !u!1 &7948619037708970338
@@ -994,7 +994,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -696.2, y: 460.4}
+  m_AnchoredPosition: {x: -696.2, y: 444}
   m_SizeDelta: {x: 379.6, y: 117.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7948619038392372618
@@ -1058,7 +1058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7948619038582450684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1270,7 +1270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000012159, y: -485}
+  m_AnchoredPosition: {x: -0.000012159, y: -440}
   m_SizeDelta: {x: 297.3, y: 127.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7948619038750442321

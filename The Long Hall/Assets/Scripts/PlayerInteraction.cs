@@ -91,13 +91,13 @@ public class PlayerInteraction : MonoBehaviour
     private void Rotate()
     {
         // rotate object to the left
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             puzzlePiece.transform.Rotate(0, 0, -90f);
         }
 
         //rotate object to the right
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if(Input.GetKeyDown(KeyCode.E))
         {
             puzzlePiece.transform.Rotate(0, 0, 90f);
         }
