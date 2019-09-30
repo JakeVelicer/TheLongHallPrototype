@@ -15,6 +15,9 @@ public class PuzzleSlotBehavior : MonoBehaviour
     private MeshRenderer mesh;
     private bool touchingPiece;
 
+    public AudioSource sound;
+    public AudioClip click;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                sound.PlayOneShot(click);
                 AttachPiece();
             }
             playerHandScript.pieceTouchingPuzzleSlot = true;
