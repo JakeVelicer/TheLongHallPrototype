@@ -10,7 +10,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
     public float optionPieceRotationZ2;
     [HideInInspector] public bool slotOccupiedCorrectly;
     [HideInInspector] public bool slotOccupied;
-    private GameObject puzzlePieceObject;
+    public GameObject puzzlePieceObject;
     private PlayerInteraction playerHandScript;
     private MeshRenderer mesh;
     private bool touchingPiece;
@@ -21,6 +21,10 @@ public class PuzzleSlotBehavior : MonoBehaviour
         playerHandScript = GameObject.Find("Hand").GetComponent<PlayerInteraction>();
         mesh = GetComponent<MeshRenderer>();
         mesh.enabled = false;
+        if (puzzlePieceObject != null)
+        {
+            AttachPiece();
+        }
     }
 
     // Update is called once per frame
@@ -28,7 +32,10 @@ public class PuzzleSlotBehavior : MonoBehaviour
     {
         if (touchingPiece && !slotOccupied)
         {
-            AttachPiece();
+            if (Input.GetMouseButtonDown(0))
+            {
+                AttachPiece();
+            }
             playerHandScript.pieceTouchingPuzzleSlot = true;
         }
         else
@@ -40,32 +47,32 @@ public class PuzzleSlotBehavior : MonoBehaviour
 
     public void AttachPiece()
     {
-        if (Input.GetMouseButtonDown(0))
+        slotOccupied = true;
+        puzzlePieceObject.transform.parent = null;
+        playerHandScript.puzzlePiece = null;
+        playerHandScript.canHold = true;
+        mesh.enabled = false;
+
+        puzzlePieceObject.GetComponent<Rigidbody>().useGravity = false;
+        puzzlePieceObject.GetComponent<Rigidbody>().isKinematic = true;
+
+        puzzlePieceObject.transform.SetParent(this.transform, true);
+        puzzlePieceObject.transform.position = transform.position;
+        puzzlePieceObject.transform.rotation =
+        Quaternion.Euler(0, 90, GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
+
+        Debug.Log(GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
+
+        if (puzzlePieceObject.name == pieceName)
         {
-            slotOccupied = true;
-            puzzlePieceObject.transform.parent = null;
-            playerHandScript.puzzlePiece = null;
-            playerHandScript.canHold = true;
-            mesh.enabled = false;
-
-            puzzlePieceObject.transform.SetParent(this.transform, true);
-            puzzlePieceObject.transform.position = transform.position;
-            puzzlePieceObject.transform.rotation =
-            Quaternion.Euler(0, 90, GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
-
-            Debug.Log(GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
-
-            if (puzzlePieceObject.name == pieceName)
+            if((GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= pieceRotationZ + 2
+            && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= pieceRotationZ - 2)
+            || (GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= optionPieceRotationZ2 + 2
+            && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= optionPieceRotationZ2 - 2))
             {
-                if((GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= pieceRotationZ + 2
-                && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= pieceRotationZ - 2)
-                || (GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= optionPieceRotationZ2 + 2
-                && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= optionPieceRotationZ2 - 2))
-                {
-                    slotOccupiedCorrectly = true;
-                    puzzleBoard.AssignPuzzle(gameObject);
-                    Debug.Log("RightPiece");
-                }
+                slotOccupiedCorrectly = true;
+                puzzleBoard.AssignPuzzle(gameObject);
+                Debug.Log("RightPiece");
             }
         }
     }

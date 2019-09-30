@@ -111,6 +111,7 @@ MonoBehaviour:
   optionPieceRotationZ2: 270
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &591911369243460201
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +223,7 @@ MonoBehaviour:
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &1019819637650937072
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +335,7 @@ MonoBehaviour:
   optionPieceRotationZ2: 180
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &2077356661151164217
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +447,7 @@ MonoBehaviour:
   optionPieceRotationZ2: 90
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &3251636008839513792
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +559,7 @@ MonoBehaviour:
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &3357929672690417931
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,6 +671,7 @@ MonoBehaviour:
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &5376084318927531705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,7 +1087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6368814594235313899}
   m_Layer: 0
-  m_Name: PuzzleWall
+  m_Name: PuzzleWall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1300,6 +1306,7 @@ GameObject:
   - component: {fileID: 7259948938195159526}
   - component: {fileID: 7259948938195159527}
   - component: {fileID: 7259948938195159524}
+  - component: {fileID: 6045046280141355320}
   m_Layer: 0
   m_Name: DoorHolder
   m_TagString: Untagged
@@ -1351,8 +1358,104 @@ MonoBehaviour:
   animator: {fileID: 6327720176876477882}
   buttonPrompt: {fileID: 8414201824552221545}
   canBeOpened: 0
-  openingDoor: {fileID: 0}
-  closingDoor: {fileID: 0}
+  openingDoor: {fileID: 8300000, guid: d8ee0c03a21ab4074b9973316d19cc5e, type: 3}
+  closingDoor: {fileID: 8300000, guid: 29b1a2c55894a456089986f446aa05a2, type: 3}
+--- !u!82 &6045046280141355320
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259948938195159513}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7731410456995670201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,6 +1567,7 @@ MonoBehaviour:
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &7787779647186122789
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +1679,7 @@ MonoBehaviour:
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &7992388513547514405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,6 +1791,7 @@ MonoBehaviour:
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &8046812559632264582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +1903,7 @@ MonoBehaviour:
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &8414201824552221545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,9 +2084,10 @@ MonoBehaviour:
   puzzleBoard: {fileID: 6368814593222678716}
   pieceName: PuzzlePiece7
   pieceRotationZ: 180
-  optionPieceRotationZ2: 180
+  optionPieceRotationZ2: -180
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
 --- !u!1 &9181787473532207077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,3 +2199,4 @@ MonoBehaviour:
   optionPieceRotationZ2: 90
   slotOccupiedCorrectly: 0
   slotOccupied: 0
+  puzzlePieceObject: {fileID: 0}
