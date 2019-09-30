@@ -28,23 +28,27 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUi.SetActive(false);
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
         gamePaused = false;
     }
     void Pause()
     {
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.Confined;
         gamePaused = true;
     }
 
     public void quitGame()
     {
+        Time.timeScale = 1f;
         Application.Quit();
 
     }
     public void restartGame()
     {
-        SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainScene");
     }
 
 }
