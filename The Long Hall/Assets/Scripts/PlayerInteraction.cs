@@ -23,8 +23,8 @@ public class PlayerInteraction : MonoBehaviour
             if (!canHold && !pieceTouchingPuzzleSlot)
                // audioPlayer.PlayOneShot(throwing);
                 throw_drop();
-        else
-            Pickup();
+            else
+                Pickup();
         }
 
         if (!canHold && puzzlePiece)
@@ -32,7 +32,6 @@ public class PlayerInteraction : MonoBehaviour
             puzzlePiece.transform.position = guide.position;
             Rotate();
         }
-        Debug.Log(puzzlePiece);
     }
 
     void OnTriggerEnter(Collider col)
@@ -56,6 +55,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Pickup()
     {
+        Debug.Log("PickUP");
         if (!puzzlePiece)
             return;
         // plays picking up audio

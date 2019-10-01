@@ -18,6 +18,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
 
     public AudioSource sound;
     public AudioClip click;
+    private bool canAttach = true;
 
     // Start is called before the first frame update
     void Start()
@@ -37,12 +38,11 @@ public class PuzzleSlotBehavior : MonoBehaviour
         if (touchingPiece && !slotOccupied)
         {
             Debug.Log("Slot Occupied: " + slotOccupied);
+            playerHandScript.pieceTouchingPuzzleSlot = true;
             if (Input.GetMouseButtonDown(0))
             {
-                sound.PlayOneShot(click);
                 AttachPiece();
             }
-            playerHandScript.pieceTouchingPuzzleSlot = true;
         }
         else
         {
@@ -53,36 +53,47 @@ public class PuzzleSlotBehavior : MonoBehaviour
 
     public void AttachPiece()
     {
-        Debug.Log("AttachPiece");
+        if (canAttach)
+        {      
+                    Debug.Log("AttachPiece"); 
+            StartCoroutine(StopAttach());
+            sound.PlayOneShot(click);
+            slotOccupied = true;
+            puzzlePieceObject.transform.parent = null;
+            playerHandScript.puzzlePiece = null;
+            playerHandScript.canHold = true;
+            mesh.enabled = false;
 
-        slotOccupied = true;
-        puzzlePieceObject.transform.parent = null;
-        playerHandScript.puzzlePiece = null;
-        playerHandScript.canHold = true;
-        mesh.enabled = false;
+            puzzlePieceObject.GetComponent<Rigidbody>().useGravity = false;
+            puzzlePieceObject.GetComponent<Rigidbody>().isKinematic = true;
 
-        puzzlePieceObject.GetComponent<Rigidbody>().useGravity = false;
-        puzzlePieceObject.GetComponent<Rigidbody>().isKinematic = true;
+            puzzlePieceObject.transform.SetParent(this.transform, true);
+            puzzlePieceObject.transform.position = transform.position;
+            puzzlePieceObject.transform.rotation =
+            Quaternion.Euler(0, 90, GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
 
-        puzzlePieceObject.transform.SetParent(this.transform, true);
-        puzzlePieceObject.transform.position = transform.position;
-        puzzlePieceObject.transform.rotation =
-        Quaternion.Euler(0, 90, GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
+            Debug.Log(GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
 
-        Debug.Log(GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
-
-        if (puzzlePieceObject.name == pieceName || puzzlePieceObject.name == pieceName2)
-        {
-            if((GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= pieceRotationZ + 2
-            && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= pieceRotationZ - 2)
-            || (GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= optionPieceRotationZ2 + 2
-            && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= optionPieceRotationZ2 - 2))
+            if (puzzlePieceObject.name == pieceName || puzzlePieceObject.name == pieceName2)
             {
-                slotOccupiedCorrectly = true;
-                puzzleBoard.AssignPuzzle(gameObject);
-                Debug.Log("RightPiece");
+                if((GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= pieceRotationZ + 2
+                && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= pieceRotationZ - 2)
+                || (GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= optionPieceRotationZ2 + 2
+                && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= optionPieceRotationZ2 - 2))
+                {
+                    slotOccupiedCorrectly = true;
+                    puzzleBoard.AssignPuzzle(gameObject);
+                    Debug.Log("RightPiece");
+                }
             }
         }
+    }
+
+    IEnumerator StopAttach()
+    {
+        canAttach = false;
+        yield return new WaitForSeconds(3);
+        canAttach = true;
     }
 
     public void AttachPieceStart()
