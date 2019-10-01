@@ -35,6 +35,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
     {
         if (touchingPiece && !slotOccupied)
         {
+            Debug.Log("Slot Occupied: " + slotOccupied);
             if (Input.GetMouseButtonDown(0))
             {
                 sound.PlayOneShot(click);
@@ -51,6 +52,8 @@ public class PuzzleSlotBehavior : MonoBehaviour
 
     public void AttachPiece()
     {
+        Debug.Log("AttachPiece");
+
         slotOccupied = true;
         puzzlePieceObject.transform.parent = null;
         playerHandScript.puzzlePiece = null;
