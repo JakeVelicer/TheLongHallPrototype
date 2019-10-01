@@ -25,5 +25,10 @@ public class OutOfBounds : MonoBehaviour
         {
             transform.position = new Vector3(-9.64f, 1.3f, 0.46f);
         }
+
+        if(col.gameObject.tag == "Boundary3")
+        {
+            transform.position = new Vector3(10.07f, 1.3f, -0.07f);
+        }
     }
 }
