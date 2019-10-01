@@ -6,6 +6,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
 {
     public PuzzleBoardBehavior puzzleBoard;
     public string pieceName;
+    public string pieceName2;
     public float pieceRotationZ;
     public float optionPieceRotationZ2;
     [HideInInspector] public bool slotOccupiedCorrectly;
@@ -70,7 +71,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
 
         Debug.Log(GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
 
-        if (puzzlePieceObject.name == pieceName)
+        if (puzzlePieceObject.name == pieceName || puzzlePieceObject.name == pieceName2)
         {
             if((GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= pieceRotationZ + 2
             && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= pieceRotationZ - 2)

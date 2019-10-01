@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece16
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -319,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece23
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -530,6 +532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece13
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -741,6 +744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece20
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -952,6 +956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece22
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -1163,6 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece14
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -1374,6 +1380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece19
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -1585,6 +1592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece15
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -1796,6 +1804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece17
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -2007,6 +2016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece25
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -2218,6 +2228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece21
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -2429,6 +2440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece24
+  pieceName2: 
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -2640,6 +2652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleBoard: {fileID: 7603354568938478805}
   pieceName: Puzzle3Piece18
+  pieceName2: Puzzle3Piece12
   pieceRotationZ: 0
   optionPieceRotationZ2: 0
   slotOccupiedCorrectly: 0
@@ -2844,6 +2857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: pieceName
       value: Puzzle3Piece12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819818646644248346, guid: 310fc10d5fa0d4802ae7e3ef6f327222,
+        type: 3}
+      propertyPath: pieceName2
+      value: Puzzle3Piece18
       objectReference: {fileID: 0}
     - target: {fileID: 1566998548288856859, guid: 310fc10d5fa0d4802ae7e3ef6f327222,
         type: 3}

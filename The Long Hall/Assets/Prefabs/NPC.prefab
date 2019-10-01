@@ -82,8 +82,6 @@ MonoBehaviour:
   audioSource: {fileID: 741389478}
   voiceLines:
   - {fileID: 8300000, guid: 8b8ee43a376b849c9b30771d56d39ad0, type: 3}
-  - {fileID: 8300000, guid: 8b8ee43a376b849c9b30771d56d39ad0, type: 3}
-  - {fileID: 8300000, guid: 8b8ee43a376b849c9b30771d56d39ad0, type: 3}
   buttonPrompt: {fileID: 8770484713403621270}
 --- !u!136 &741389477
 CapsuleCollider:
@@ -95,7 +93,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 3.13
+  m_Radius: 1.49
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -378,6 +376,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Model Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: fae0308fc7102f548b62693956cf0aca,
+        type: 3}
+      propertyPath: m_Name
+      value: Model
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fae0308fc7102f548b62693956cf0aca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -488,11 +491,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8d12d9ce848a41128b5fdc22de83b29, type: 2}
-    - target: {fileID: 2534866581884222612, guid: fae0308fc7102f548b62693956cf0aca,
-        type: 3}
-      propertyPath: m_Name
-      value: Model
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fae0308fc7102f548b62693956cf0aca, type: 3}
 --- !u!4 &69112453051891883 stripped
