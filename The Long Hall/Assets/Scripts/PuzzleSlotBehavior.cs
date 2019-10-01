@@ -55,8 +55,8 @@ public class PuzzleSlotBehavior : MonoBehaviour
     {
         if (canAttach)
         {      
-                    Debug.Log("AttachPiece"); 
-            StartCoroutine(StopAttach());
+            Debug.Log("AttachPiece");
+
             sound.PlayOneShot(click);
             slotOccupied = true;
             puzzlePieceObject.transform.parent = null;
@@ -87,13 +87,6 @@ public class PuzzleSlotBehavior : MonoBehaviour
                 }
             }
         }
-    }
-
-    IEnumerator StopAttach()
-    {
-        canAttach = false;
-        yield return new WaitForSeconds(3);
-        canAttach = true;
     }
 
     public void AttachPieceStart()
@@ -130,8 +123,19 @@ public class PuzzleSlotBehavior : MonoBehaviour
     {
         puzzlePieceObject.transform.parent = null;
         slotOccupiedCorrectly = false;
-        slotOccupied = false;
         puzzleBoard.RemovePuzzlePiece(gameObject);
+        puzzlePieceObject = null;
+        touchingPiece = false;
+        StartCoroutine(StopAttach());
+    }
+
+    private IEnumerator StopAttach()
+    {   
+        canAttach = false;
+        yield return new WaitForSeconds(0.5f);
+        canAttach = true;
+        slotOccupied = false;
+        Debug.Log(slotOccupied);
     }
 
     private void OnTriggerEnter(Collider other)
