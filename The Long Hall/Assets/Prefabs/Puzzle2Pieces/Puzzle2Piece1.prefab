@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 357545423588933413}
   - component: {fileID: 1751130468765007996}
   - component: {fileID: 1744779004811866330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Puzzle2Piece1
   m_TagString: PzPiece
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -83,7 +83,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.9519005
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 7774942696811100029}
   - component: {fileID: 7036564061818299310}
   - component: {fileID: 1766615512271867742}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
