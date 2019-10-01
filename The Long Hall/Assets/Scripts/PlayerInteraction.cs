@@ -9,22 +9,21 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject puzzlePiece;
     public Transform guide;
     public bool pieceTouchingPuzzleSlot;
+    //public CapsuleCollider thisCollider;
+    
 
-    public AudioSource audioPlayer;
 
-    public AudioClip grab;
-    public AudioClip throwing;
-    public AudioClip rotate;
 
     void Update()
     {
+
+        
         if (Input.GetMouseButtonDown(0))
         {
             if (!canHold && !pieceTouchingPuzzleSlot)
-               // audioPlayer.PlayOneShot(throwing);
                 throw_drop();
-        else
-            Pickup();
+            else
+                Pickup();
         }
 
         if (!canHold && puzzlePiece)
@@ -32,16 +31,31 @@ public class PlayerInteraction : MonoBehaviour
             puzzlePiece.transform.position = guide.position;
             Rotate();
         }
+
+        
     }
 
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "PzPiece")
         {
-            if (!puzzlePiece) // if we don't have anything holding
-                puzzlePiece = col.gameObject;
            
+
+            if (!puzzlePiece) // if we don't have anything holding
+            {
+                puzzlePiece = col.gameObject;
+                
+
+            }
+
+            if(col.gameObject.tag == "Boundary")
+            {
+                transform.position = new Vector3(-30.97f, 1.63f, 0.361f);
+                Debug.Log("trigger");
+            }
+            
         }
+       
     }
 
     void OnTriggerExit(Collider col)
@@ -49,16 +63,21 @@ public class PlayerInteraction : MonoBehaviour
         if (col.gameObject.tag == "PzPiece")
         {
             if (canHold)
-                puzzlePiece = null;
+            {
+               puzzlePiece = null;
+            }    
         }
+
+        
+        
     }
 
-    private void Pickup()
+    public void Pickup()
     {
+        
         if (!puzzlePiece)
             return;
-        // plays picking up audio
-        audioPlayer.PlayOneShot(grab);
+        
         //We set the object parent to our guide empty object.
         if (puzzlePiece.transform.parent != null)
         {
@@ -74,6 +93,7 @@ public class PlayerInteraction : MonoBehaviour
         puzzlePiece.transform.position = guide.transform.position;
         puzzlePiece.transform.rotation = guide.transform.rotation;
 
+        //thisCollider.isTrigger = false;
         canHold = false;
     }
 
@@ -81,8 +101,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (!puzzlePiece)
             return;
-        //players throwing audio
-        audioPlayer.PlayOneShot(throwing);
+
         //Set our Gravity to true again.
         puzzlePiece.GetComponent<Rigidbody>().useGravity = true;
         puzzlePiece.GetComponent<Rigidbody>().isKinematic = false;
@@ -94,6 +113,7 @@ public class PlayerInteraction : MonoBehaviour
         //Unparent our ball
         guide.GetChild(0).parent = null;
         canHold = true;
+        //thisCollider.isTrigger = true;
     }
 
     private void Rotate()
@@ -101,14 +121,12 @@ public class PlayerInteraction : MonoBehaviour
         // rotate object to the left
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            audioPlayer.PlayOneShot(rotate);
             puzzlePiece.transform.Rotate(0, 0, -90f);
         }
 
         //rotate object to the right
         if(Input.GetKeyDown(KeyCode.E))
         {
-            audioPlayer.PlayOneShot(rotate);
             puzzlePiece.transform.Rotate(0, 0, 90f);
         }
     }
