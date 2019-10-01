@@ -6,6 +6,9 @@ TagManager:
   tags:
   - BodyPart
   - PzPiece
+  - Boundary1
+  - Boundary2
+  - Boundary3
   layers:
   - Default
   - TransparentFX

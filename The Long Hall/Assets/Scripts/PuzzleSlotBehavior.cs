@@ -26,7 +26,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
         mesh.enabled = false;
         if (puzzlePieceObject != null)
         {
-            AttachPiece();
+            AttachPieceStart();
         }
     }
 
@@ -35,6 +35,7 @@ public class PuzzleSlotBehavior : MonoBehaviour
     {
         if (touchingPiece && !slotOccupied)
         {
+            Debug.Log("Slot Occupied: " + slotOccupied);
             if (Input.GetMouseButtonDown(0))
             {
                 sound.PlayOneShot(click);
@@ -51,6 +52,8 @@ public class PuzzleSlotBehavior : MonoBehaviour
 
     public void AttachPiece()
     {
+        Debug.Log("AttachPiece");
+
         slotOccupied = true;
         puzzlePieceObject.transform.parent = null;
         playerHandScript.puzzlePiece = null;
@@ -66,6 +69,36 @@ public class PuzzleSlotBehavior : MonoBehaviour
         Quaternion.Euler(0, 90, GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
 
         Debug.Log(GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
+
+        if (puzzlePieceObject.name == pieceName)
+        {
+            if((GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= pieceRotationZ + 2
+            && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= pieceRotationZ - 2)
+            || (GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z <= optionPieceRotationZ2 + 2
+            && GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z >= optionPieceRotationZ2 - 2))
+            {
+                slotOccupiedCorrectly = true;
+                puzzleBoard.AssignPuzzle(gameObject);
+                Debug.Log("RightPiece");
+            }
+        }
+    }
+
+    public void AttachPieceStart()
+    {
+        slotOccupied = true;
+        puzzlePieceObject.transform.parent = null;
+        mesh.enabled = false;
+
+        puzzlePieceObject.GetComponent<Rigidbody>().useGravity = false;
+        puzzlePieceObject.GetComponent<Rigidbody>().isKinematic = true;
+
+        puzzlePieceObject.transform.SetParent(this.transform, true);
+        puzzlePieceObject.transform.position = transform.position;
+        puzzlePieceObject.transform.rotation =
+        Quaternion.Euler(0,
+        GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.y,
+        GameObject.Find(puzzlePieceObject.name).transform.localEulerAngles.z);
 
         if (puzzlePieceObject.name == pieceName)
         {

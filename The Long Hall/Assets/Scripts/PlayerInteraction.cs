@@ -32,6 +32,7 @@ public class PlayerInteraction : MonoBehaviour
             puzzlePiece.transform.position = guide.position;
             Rotate();
         }
+        Debug.Log(puzzlePiece);
     }
 
     void OnTriggerEnter(Collider col)
