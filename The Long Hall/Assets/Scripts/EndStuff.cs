@@ -18,6 +18,7 @@ public class EndStuff : MonoBehaviour
         if (!isHappening)
         {
             isHappening = true;
+            playerAnimator.enabled = true;
             audioSourceEnd.Play();
             player.GetComponent<PlayerMovement>().enabled = false;
             mainCamera.GetComponent<CameraController>().enabled = false;
