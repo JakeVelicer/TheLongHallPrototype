@@ -28,6 +28,10 @@ public class PuzzleBoardBehavior : MonoBehaviour
         if (trueAmount == slotFilledCorrectly.Length)
         {
             door.canBeOpened = true;
+            if (gameObject.CompareTag("3rdPuzzle"))
+            {
+                gameObject.GetComponent<EndStuff>().EndSequence();
+            }
         }
     }
 

@@ -9,6 +9,7 @@ TagManager:
   - Boundary1
   - Boundary2
   - Boundary3
+  - 3rdPuzzle
   layers:
   - Default
   - TransparentFX
